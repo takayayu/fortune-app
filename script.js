@@ -1,3 +1,10 @@
+// 今日の日付を表示する
+const today = new Date();
+const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+const formattedDate = today.toLocaleDateString('ja-JP', options);
+
+document.getElementById("todayDate").textContent = `本日の日付：${formattedDate}`;
+
 // おみくじリスト
 const fortunes = [
     {
@@ -39,20 +46,16 @@ const fortunes = [
         "日常にある幸せを見つけて、感謝の気持ちを持とう。",
         "気分転換にぴったりな日！リフレッシュしよう。"
       ]
-    },
-    {
-      type: "未来吉 🌈",
-      advice: [
-        "今は準備の時。未来に繋がる大事な一歩になるよ。",
-        "行動した分だけ未来が明るくなる！",
-        "希望を忘れずにいれば、チャンスはすぐそこに。"
-      ]
     }
   ];
 
 document.getElementById('fortuneBtn').addEventListener('click', () => {
     const resultEl = document.getElementById('fortuneResult');
     const adviceEl = document.getElementById('fortuneAdvice');
+    const fortuneBtn = document.getElementById('fortuneBtn');
+
+    // ボタンを無効化
+    fortuneBtn.disabled = true;
 
     // 一旦アニメーション用クラスを外す
     resultEl.classList.remove('show');
@@ -68,14 +71,30 @@ document.getElementById('fortuneBtn').addEventListener('click', () => {
     setTimeout(() => {
       resultEl.classList.add('show');
       adviceEl.classList.add('show');
+     // 背景色を変える（class追加）
+     document.body.classList.add("change-bg");
+     createStars();
     }, 50);
 });
 
 
+// 星が舞うエフェクト
+function createStars() {
+  const container = document.getElementById("stars");
 
+  for (let i = 0; i < 30; i++) {
+    const star = document.createElement("div");
+    star.classList.add("star");
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 2) + "s"; // 2〜4秒
+    star.style.animationDelay = (Math.random() * 1) + "s";
+    container.appendChild(star);
 
-
-
-
+    // 星を消す（重くならないように）
+    setTimeout(() => {
+      container.removeChild(star);
+    }, 5000);
+  }
+}
 
 
