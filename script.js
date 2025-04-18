@@ -98,7 +98,7 @@ document.getElementById("fortuneBtn").addEventListener("click", () => {
     // 画像とリンクを設定
     document.getElementById("pokemonImage").src = imagePath;
     document.getElementById("pokemonLink").href = pokemonLink;
-    document.getElementById("pokemonLink").textContent = `ポケモン詳細ページ: ${pokemonNumber}`;
+    document.getElementById("pokemonLink").textContent = `ポケモン図鑑: ${pokemonNumber}`;
 
     // pokemonSectionの表示
     document.getElementById("pokemonSection").style.display = "block";
