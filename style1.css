@@ -117,6 +117,30 @@ button:hover {
   opacity: 0.8;
 }
 
+/* ===== ポケモンの表示 ===== */
+#pokemonSection {
+  display: none; /* 初期状態では非表示 */
+  margin-top: 20px;
+}
+
+#pokemonImage {
+  max-width: 200px;
+  display: none; /* 初期状態では非表示 */
+}
+
+#pokemonLink {
+  display: block;
+  margin-top: 10px;
+  color: #3f72af;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+#pokemonLink:hover {
+  color: #1d2a8c;
+}
+
 /* ===== キーフレーム ===== */
 @keyframes fadeSlideDown {
   from {

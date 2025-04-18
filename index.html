@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>今日の運勢占い</title>
-    <link rel="stylesheet" href="style1.css">
-    <link rel="icon" href="images/icon_daruma.png">
-</head>
-<body>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="icon" href="images/icon/icon_daruma.png" />
+  </head>
+  <body>
     <h1>「ティン・コウテツの占いの館」へようこそ</h1>
     <p id="todayDate"></p>
     <h2>今日の運勢を占いますか？</h2>
@@ -16,7 +16,18 @@
     <div class="result" id="fortuneResult"></div>
     <div class="advice" id="fortuneAdvice"></div>
 
+    <div id="pokemonSection">
+      <h3>🎁 今日のおすすめポケモン</h3>
+      <img
+        id="pokemonImage"
+        src=""
+        alt="今日のおすすめポケモン"
+        style="max-width: 200px; display: none"
+      />
+        <a id="pokemonLink" href="" target="_blank">ポケモン図鑑</a>
+    </div>
+
     <div class="stars" id="stars"></div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
